@@ -1,0 +1,48 @@
+baseURL = "https://blog.svilenvasilev.org/"
+languageCode = "en-us"
+title = "Patchwork"
+theme = "m10c"
+
+[params]
+  author = "Svilen Vasilev"
+  description = "BLOGGG"
+  # avatar = "static/avatar.jpg"
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/tarakanbg"
+  [[params.social]]
+    name = "facebook"
+    url = "https://facebook.com/ascendensphoto"
+  [[params.social]]
+    name = "twitter"
+    url = "https://twitter.com/svilenv"
+  [[params.social]]
+    name = "instagram"
+    url = "https://instagram.com/svilen_v"
+
+  # Brown theme
+  #[params.style]
+  #  darkestColor = "#463625"
+  #  darkColor = "#2a3738"
+  #  primaryColor = "#eeee6a"
+  #  lightColor = "#96a879"
+  #  lightestColor = "#ffffff"
+
+  # Green theme
+  #[params.style]
+  #  darkestColor = "#315659"
+  #  darkColor = "#253031"
+  #  primaryColor = "#dad865"
+  #  lightColor = "#96a879"
+  #  lightestColor = "#fff"
+
+  # Red and black theme
+  #[params.style]
+  #  darkestColor = "#d35050"
+  #  darkColor = "#212121"
+  #  primaryColor = "#ffffff"
+  #  lightColor = "#a2a2a2"
+  #  lightestColor = "#d3d3d3"
+
+[markup.goldmark.renderer]
+  unsafe= true
