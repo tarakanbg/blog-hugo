@@ -1,11 +1,28 @@
 baseURL = "https://blog.svilenvasilev.org/"
-languageCode = "en-us"
-title = "Patchwork"
 theme = "m10c"
+DefaultContentLanguage = "bg"
+
+[languages]
+  
+  [languages.bg]
+    title = "Patchwork"
+    languageCode = "bg"
+
+    [languages.bg.params]
+      author = "Свилен Василев"
+      description = "Хрумки, спомени и наблюдения"
+      subtitle = "(Пъстротии)"
+
+  [languages.en]
+    title = "Patchwork"
+    languageCode = "en-us"
+
+    [languages.en.params]
+    author = "Svilen Vasilev"
+    description = "An assorted collection of non-essential randomness"
+    subtitle = ""
 
 [params]
-  author = "Svilen Vasilev"
-  description = "BLOGGG"
   # avatar = "static/avatar.jpg"
   [[params.social]]
     name = "github"

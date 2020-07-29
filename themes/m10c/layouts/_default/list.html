@@ -1,13 +1,19 @@
 {{ define "main" }}
   <article>
-    <h1>{{ .Title }}</h1>
+    <h1>{{ .Title }} {{ .Site.Params.subtitle }}</h1>
     <ul class="posts-list">
-      {{ range $index, $element := .Paginator.Pages }}
+      {{ $pages := .Paginator.Pages }}
+      {{ range .Site.Home.Translations }}
+      {{ $pages = $pages | lang.Merge .Paginator.Pages }}
+      {{ end }}
+
+      {{ range $index, $element := $pages }}
         <li class="posts-list-item">
           <a class="posts-list-item-title" href="{{ .Permalink }}">{{ .Title }}</a>
           <span class="posts-list-item-description">
-            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }} {{ .ReadingTime }} min read -
-            {{ .PublishDate.Format "Jan 2, 2006" }}
+            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
+            {{ .ReadingTime }} {{ i18n "minutes" }} {{ i18n "read" }} -
+            {{ .Date.Day }} {{ i18n .Date.Month }} {{ .Date.Year }}
           </span>
         </li>
       {{ end }}

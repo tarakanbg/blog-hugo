@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     {{ hugo.Generator }}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
+    <meta name="author" content="{{ .Site.Params.author }}" />
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
     {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
@@ -17,17 +17,37 @@
   </head>
   <body>
     <header class="app-header">
-      <a href="{{ .Site.BaseURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}" /></a>
-      <h1>{{ .Site.Title }}</h1>
-      <p>{{ .Site.Params.description | default "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium." }}</p>
+      <a href="{{ .Site.BaseURL }}">
+        <img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author }}" />
+      </a>
+      <h1>
+        {{ .Site.Title }}
+     
+        {{ if eq .Site.Language.Lang "bg" }}
+          <br>
+          {{ .Site.Params.subtitle }}
+        {{ end }}
+      </h1>
+      <p>{{ .Site.Params.description }}</p>
       <div class="app-header-social">
         <p>
           <a class="maillink" href="mailto:svsv@hey.com">svsv@hey.com</a>
         </p>
         {{ range .Site.Params.social }}
-          <a target="_blank" href="{{ .url }}" rel="noreferrer noopener">{{ partial "icon.html" (dict "ctx" $ "name" .name ) }}</a>
+          <a target="_blank" href="{{ .url }}" rel="noreferrer noopener">
+            {{ partial "icon.html" (dict "ctx" $ "name" .name ) }}
+          </a>
         {{ end }}
       </div>
+
+      <p>
+      {{ if eq .Site.Language.Lang "en" }}
+        <a class="button is-small is-danger is-rounded" href="/">На български</a>
+      {{ else }}
+        <a class="button is-small is-danger is-rounded" href="/en">In English</a>
+      {{ end }}
+      </p>
+
     </header>
     <main class="app-container">
       {{ block "main" . }}
