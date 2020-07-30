@@ -4,6 +4,9 @@
 [read]  
   other = "четене"
 
+[January]
+  other = "януари"
+
 [April]
   other = "април"
 

@@ -4,6 +4,9 @@
 [read]  
   other = "read"
 
+[January]
+  other = "Jan"
+
 [April]
   other = "Apr"
 
