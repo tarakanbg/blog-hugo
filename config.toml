@@ -5,22 +5,32 @@ DefaultContentLanguage = "bg"
 [languages]
   
   [languages.bg]
+    contentDir = "content/bg"
+    languageName = "Bulgarian"
+    weight = 10
     title = "Patchwork"
     languageCode = "bg"
 
     [languages.bg.params]
       author = "Свилен Василев"
       description = "Хрумки, спомени и наблюдения"
+      subdescription = "блог на Свилен Василев"
+      bartitle = "блог на Свилен Василев"
       subtitle = "(Пъстротии)"
 
   [languages.en]
+    contentDir = "content/en"
+    languageName = "English"
+    weight = 20
     title = "Patchwork"
     languageCode = "en-us"
 
     [languages.en.params]
-    author = "Svilen Vasilev"
-    description = "An assorted collection of non-essential randomness"
-    subtitle = ""
+      author = "Svilen Vasilev"
+      description = "An assorted collection of non-essential randomness"
+      subdescription = "by Svilen Vasilev"
+      bartitle = "a blog by Svilen Vasilev"
+      subtitle = ""
 
 [params]
   # avatar = "static/avatar.jpg"

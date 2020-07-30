@@ -1,8 +1,11 @@
 [minutes]
-  other = "минути"
+  other = "мин."
 
 [read]  
   other = "четене"
+
+[April]
+  other = "април"
 
 [June]
   other = "юни"
@@ -12,3 +15,4 @@
 
 [August]
   other = "август"
+

@@ -1,11 +1,17 @@
 [minutes]
   other = "min"
+
 [read]  
   other = "read"
 
+[April]
+  other = "Apr"
+
 [June]
   other = "Jun"
+
 [July]
   other = "Jul"
+
 [August]
   other = "Aug"

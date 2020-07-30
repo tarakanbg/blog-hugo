@@ -5,12 +5,21 @@
       <div class="post-meta">
         <div>
           {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
-          {{ .PublishDate.Format "Jan 2, 2006" }}
+          {{ .Date.Day }} {{ i18n .Date.Month }} {{ .Date.Year }}
+
         </div>
         <div>
           {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
-          {{ .ReadingTime }} min read
+          {{ .ReadingTime }} {{ i18n "minutes" }} {{ i18n "read" }}
         </div>
+        {{- if .Params.location_url -}}
+        <div>
+          {{ partial "icon.html" (dict "ctx" $ "name" "crosshair") }}
+              <a class="tag" href="{{ .Params.location_url }}"
+                target="_blank">{{ .Params.location_name }}</a>
+        </div>
+        {{- end -}}
+
         {{- with .Params.tags -}}
         <div>
           {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
